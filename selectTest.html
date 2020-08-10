@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <title>
+        Hello World
+    </title>
+    <body>
+        <div id="app">
+            <h1>{{message}}</h1>
+            <div>
+                <select v-model="month" @change="selectClick">
+                    <option v-for="(item) in months" :value="item">{{item}}</option>
+                </select>
+            </div>
+            
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </body>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '下拉選單 測試',
+                months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+                month: 'January',
+            },
+
+            methods: {
+                selectClick(){
+                    alert(this.month)
+                }
+            }
+        })
+
+
+
+
+        //function Vue(){}
+        
+    </script>
+</html>
